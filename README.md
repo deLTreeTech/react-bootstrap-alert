@@ -1,4 +1,4 @@
-# dummy-counter
+# react-bootstrap-alert
 
 A simple React component that handles display of bootstrap alert.
 
