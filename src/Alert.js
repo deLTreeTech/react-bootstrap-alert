@@ -10,11 +10,13 @@ const defaultId = 'default-alert'
 const propTypes = {
   id: PropTypes.string,
   fade: PropTypes.bool,
+  showClose: PropTypes.bool,
 }
 
 const defaultProps = {
   id: 'default-alert',
   fade: true,
+  showClose: true,
 }
 
 function Alert({ id, fade }) {
@@ -105,12 +107,14 @@ function Alert({ id, fade }) {
         {alerts.map((alert, index) => (
           <div key={index} className={cssClasses(alert)} role="alert">
             <span dangerouslySetInnerHTML={{ __html: alert.message }}></span>
-            <button
-              type="button"
-              className="btn-close"
-              aria-label="Close"
-              onClick={() => removeAlert(alert)}
-            ></button>
+            {alert.showClose && (
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={() => removeAlert(alert)}
+              ></button>
+            )}
           </div>
         ))}
       </div>
