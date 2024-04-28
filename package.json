@@ -1,6 +1,6 @@
 {
   "name": "@deltreetech/react-bootstrap-alert",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "React Bootstrap Alert Component",
   "author": "John ADEAGBO",
   "license": "Apache-2.0",
@@ -10,15 +10,16 @@
   "module": "dist/index.esm.js",
   "scripts": {
     "build": "rollup -c",
-    "start": "start"
+    "start": "start",
+    "publish": "npm run build && npm publish"
   },
   "dependencies": {
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "^6.12.1",
     "rxjs": "^7.4.0"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",

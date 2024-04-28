@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import { Subject } from 'rxjs'
 import { filter } from 'rxjs/operators'
@@ -20,7 +20,7 @@ const defaultProps = {
 }
 
 function Alert({ id, fade }) {
-  const history = useHistory()
+  const navigate = useNavigate();
   const [alerts, setAlerts] = useState([])
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function Alert({ id, fade }) {
     })
 
     // clear alerts on location change
-    const historyUnlisten = history?.listen(() => {
+    const historyUnlisten = navigate?.listen(() => {
       AlertService.clear(id)
     })
 
